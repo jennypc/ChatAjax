@@ -6,6 +6,7 @@
 <head>
     <title>Chat con PHP</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
+    
     <script type="text/javascript">
     function ajax (){
         var req = new XMLHttpRequest();
@@ -31,6 +32,8 @@
             <input type="text" name="nombre" placeholder="Ingresa tu nombre">
             <textarea name="mensaje" placeholder="Ingresa tu mensaje"></textarea>
             <input type="submit" name="enviar" value="Enviar">
+<!--            <button id="button">enviar noti</button>-->
+            <button id="demo-btn">enviar noti</button>
         </form>
         
         <?php
@@ -50,5 +53,25 @@
         ?>
         
     </div>
+    <script src="noti.js"></script>
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+<script>
+
+    Push.Permission.request();
+
+    document.getElementById('demo-btn').onclick = function () {
+        Push.create('Hi there!', {
+            body: 'This is a notification.',
+            icon: 'icon.png',
+            timeout: 8000,                  // Timeout before notification closes automatically.
+            vibrate: [100, 100, 100],       // An array of vibration pulses for mobile devices.
+            onClick: function() {
+                // Callback for when the notification is clicked. 
+                console.log(this);
+            }  
+        });
+    };
+
+</script>
 </html>
