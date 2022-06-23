@@ -32,7 +32,7 @@
             <input type="text" name="nombre" placeholder="Ingresa tu nombre">
             <textarea name="mensaje" placeholder="Ingresa tu mensaje"></textarea>
             <input type="submit" name="enviar" value="Enviar">
-<!--            <button id="button">enviar noti</button>-->
+            <button id="button">3333</button>
             <button id="demo-btn">enviar noti</button>
         </form>
         
